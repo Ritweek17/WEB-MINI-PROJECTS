@@ -1,7 +1,9 @@
 let boxex = document.querySelectorAll(".box");
 let turn = "True";
+count = 0;
 boxex.forEach((box) => {
     box.addEventListener("click", () => {
+            count++;
             if (turn === "True") {
                 box.innerText = "X";
                 turn = "False";
@@ -40,7 +42,38 @@ const showwinner = (winner) => {
     msg.innerText = `Player ${winner} wins!`;
     let winnerMsg = document.querySelector(".winner-msg");
     winnerMsg.classList.remove("hide");
+        Disablebtn();
 }
 
 const Disablebtn = () => {
-    
+    boxex.forEach((box) => {
+        box.disabled = true;
+    }); 
+}
+
+const Enablebtn = () => {
+    boxex.forEach((box) => {
+        box.disabled = false;
+    });
+}
+
+const newGame = () => {
+    boxex.forEach((box) => {
+        box.innerText = "";
+        turn = "True";
+        Enablebtn();
+        let winnerMsg = document.querySelector(".winner-msg");
+        winnerMsg.classList.add("hide");
+    });
+}
+
+let resetBtn = document.querySelector(".reset-btn");
+resetBtn.addEventListener("click", newGame);
+
+let newgameBtn = document.querySelector(".play-again");
+newgameBtn.addEventListener("click", newGame);
+
+if (count === 9 && !winner) {
+    let msg = document.querySelector("#msg");
+    msg.innerText = "It's a draw!";
+}
