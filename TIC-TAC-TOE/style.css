@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #f2f2f2;
+    font-family: 'Poppins', sans-serif;
+}
+.container{
+    height: 70vh;
+    width: 70vw;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vh;
+
+}
+.heading{
+    font-size: 4vmin;
+    margin-bottom: 5vh;
+}
+.game {
+    display: flex;
+    flex-wrap: wrap;
+    width: 60vmin;
+    height: 60vmin;
+    align-items: center;
+    gap: 3vmin;
+    border-radius: 10%;
+    border: none;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+.box {
+    width: 18vmin;
+    background-color: aquamarine;
+    height: 18vmin;
+    border: none;
+    border-radius: 15%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    font-size: 7vmin;
+
+    
+}
+.hide{
+    display: none;
+}
